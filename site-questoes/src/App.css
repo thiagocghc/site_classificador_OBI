@@ -1,0 +1,234 @@
+/* src/App.css */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* --- Cabeçalho --- */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.app-logo {
+  width: 50px;
+  height: 50px;
+  /* Opcional: Garante que a imagem não fique distorcida se as proporções forem diferentes */
+  object-fit: contain; 
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+}
+
+/* --- Conteúdo Principal (Layout de 3 Colunas) --- */
+.main-content {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden; /* Evita que o layout quebre */
+  padding: 20px;
+  gap: 20px;
+}
+
+/* --- Coluna de Filtros (Esquerda) --- */
+.coluna-filtros {
+  flex: 1;
+  max-width: 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.coluna-filtros h2 {
+  margin-top: 0;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.coluna-filtros select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.coluna-filtros button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: auto; /* Empurra o botão para baixo */
+}
+
+/* --- Coluna de Questões (Meio) --- */
+.coluna-questoes {
+  flex: 3;
+  overflow-y: auto; /* Permite a rolagem dos cards */
+  padding-right: 15px; /* Espaço para a barra de rolagem */
+}
+
+.cartao-questao {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  text-align: left;
+}
+.cartao-questao h3 { margin-top: 0; color: #0056b3; }
+.meta-info { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; font-size: 0.9rem; color: #555; }
+
+/* --- Coluna do Classificador (Direita) --- */
+.coluna-classificador {
+  flex: 2;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+.coluna-classificador h2 { margin-top: 0; text-align: center; }
+.coluna-classificador textarea {
+  width: 95%;
+  flex-grow: 1; /* Faz o textarea ocupar o espaço disponível */
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none; /* Desabilita o redimensionamento manual */
+}
+.coluna-classificador button { padding: 12px; font-size: 1rem; color: white; background-color: #28a745; border: none; border-radius: 4px; cursor: pointer; }
+
+
+/* --- Card de Resposta da Classificação --- */
+.resposta-card {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  width: 80%;
+}
+
+.resposta-card-icon {
+  font-size: 1.5rem; /* Tamanho do ícone */
+  margin-right: 15px; /* Espaço entre ícone e texto */
+  display: flex;
+  align-items: center;
+}
+
+.resposta-card-texto {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize; /* Deixa a primeira letra maiúscula */
+}
+
+/* --- Cores Específicas para Cada Classe --- */
+
+/* Ordenação (Azul) */
+.card-ordenacao {
+  background-color: #eaf2ff;
+  border-color: #b0cfff;
+  color: #0052cc;
+}
+
+/* Agrupamento (Verde) */
+.card-agrupamento {
+  background-color: #e3fcef;
+  border-color: #abf5d1;
+  color: #006644;
+}
+
+/* Outros (Cinza) */
+.card-outros {
+  background-color: #f1f2f4;
+  border-color: #dfe1e6;
+  color: #42526e;
+}
+
+/* Erro (Vermelho) */
+.card-erro {
+  background-color: #ffebe6;
+  border-color: #ffc9ba;
+  color: #de350b;
+}
+
+.coluna-classificador {
+  flex: 2;
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+.coluna-classificador h2 { margin-top: 0; text-align: center; }
+
+.coluna-classificador textarea {
+  width: 95%; /* Ajuste para preencher o container */
+  flex-grow: 1; /* Faz o textarea ocupar o espaço vertical disponível */
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none;
+}
+
+.coluna-classificador button { 
+  padding: 12px; 
+  font-size: 1rem; 
+  color: white; 
+  background-color: #28a745; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+.resposta-classificador {
+  margin-top: 1.5rem; /* Aumenta o espaço acima da resposta */
+}
+.resposta-classificador label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.resposta-classificador input {
+  width: 95%; /* Ajuste para preencher o container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  font-weight: bold;
+}
