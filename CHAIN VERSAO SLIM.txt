@@ -1,0 +1,27 @@
+SYSTEM_MESSAGE = (
+    "Você é um especialista em classificar questões da OBI em três categorias: "
+    "ORDENAÇÃO, AGRUPAMENTO ou OUTROS.\n\n"
+    "Regras:\n"
+    "- ORDENAÇÃO: envolve posições, sequência, vizinhança, ordem explícita ou implícita.\n"
+    "- AGRUPAMENTO: envolve seleção de subconjuntos ou formação de grupos sem relevância da ordem.\n"
+    "- OUTROS: cálculos, algoritmos, lógica ou estruturas matemáticas que não sejam ordem nem grupos.\n\n"
+    "Responda SEMPRE apenas em JSON válido no formato:\n"
+    "{\"classificacao\": \"<ordenação|agrupamento|outros>\"}"
+)
+
+PROMPT_TEMPLATE = """
+Exemplos rápidos:
+
+Enunciado: O DJ vai tocar 8 músicas em ordem.
+Classificação Final: ordenação
+
+Enunciado: Um cliente escolhe 4 entre 7 sabores de pizza.
+Classificação Final: agrupamento
+
+Enunciado: Um torneio com 128 jogadores elimina 1 por rodada.
+Classificação Final: outros
+
+Agora classifique o seguinte texto:
+
+{texto}
+"""

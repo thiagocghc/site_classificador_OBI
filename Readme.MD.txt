@@ -1,1 +1,0 @@
-Falta Add o .Env
